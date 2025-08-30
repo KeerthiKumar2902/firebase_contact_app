@@ -1,12 +1,94 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# Firebase Contact Manager
 
-Currently, two official plugins are available:
+A simple React + Vite application powered by Firebase Firestore for managing contacts with real-time add, edit, delete, and search features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Note: This project is not deployed — intended for local development only.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- Add new contacts
+- Edit existing contacts
+- Delete contacts
+- Real-time updates with Firestore `onSnapshot`
+- Search contacts by name, email, or phone
+
+---
+
+## 📂 Project Structure
+
+```
+
+firebase\_contact\_app/
+├── src/
+│   ├── components/      # Reusable React components
+│   ├── config/          # Firebase configuration
+│   ├── App.jsx          # Main app component
+│   └── main.jsx         # React entry point
+├── .env                 # Environment variables (not committed)
+├── .gitignore           # Files ignored by git
+├── package.json         # Dependencies and scripts
+└── vite.config.js       # Vite configuration
+
+````
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/KeerthiKumar2902/firebase_contact_app.git
+cd firebase_contact_app
+````
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup Firebase
+
+* Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+* Enable **Firestore Database**
+* Get your Firebase config object
+
+Create a `.env` file in the project root:
+
+```
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 4. Start the Project
+
+```bash
+npm run dev
+```
+
+The app will run locally at `http://localhost:5173/`.
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
+
+---
+
+## ⚠️ Notes
+
+* Make sure `.env` is **never committed** (already in `.gitignore`).
+* This project is **not deployed** — intended only for **local development**.
+* Firebase Firestore rules should be configured properly if extending to production.
+
+---
+
